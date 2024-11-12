@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "example-project"
+version = "0.1.0"
+description = "An example Python project."
+authors = ["Your Name <your.email@example.com>"]
+dependencies = [
+    {file = "requirements.txt"}
+]

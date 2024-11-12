@@ -1,7 +1,9 @@
-"""_summary_
+"""
+LOGGING AND ERROR HANDLINGS STILL NEED TO BE DONE
 
-Returns:
-    _type_: _description_
+I ALSO STILL NEED TO REFACTOR CODE AND BUILD A "def Config_parser()"
+I ALSO STILL NEED TO BUILD A FUNCTION THAT CHECKS OPERATING SYSTEM 
+THIS TRIGGERS AN APPROPIATE WRITE FLOW WHEN USING DATABRICKS OR OTHER PLATFORM
 """
 
 import csv
@@ -73,7 +75,7 @@ def generate_expiry_date() -> datetime:
     return expiry_date
 
 
-def generate_CUSTOMER_NUMber():
+def generate_CUSTOMER_NUMBER():
     """_summary_
 
     Returns:
@@ -96,7 +98,7 @@ def generate_customer_data(num_records):
     data = []
     for _ in range(num_records):
         customer_data = {
-            "CUSTOMER_NUMBER": generate_CUSTOMER_NUMber(),
+            "CUSTOMER_NUMBER": generate_CUSTOMER_NUMBER(),
             "FIRST_NAME": fake.first_name(),
             "LAST_NAME": fake.last_name(),
             "BIRTH_DATE": generate_birth_date(),
@@ -130,13 +132,13 @@ def generate_transaction(num: int, customer_data: dict):
     creditcard_transaction = []
     product_transaction = []
 
-    for i in range(num):
+    for _ in range(num):
         transaction_id = str(uuid.uuid4())
         item_value = round(uniform(1, 100000), 2)
         item_quantity = randint(1, 200)
         transaction_value = item_quantity * item_value
         word_num = 50
-        departments = [fake.word() for i in range(word_num)]
+        departments = [fake.word() for _ in range(word_num)]
 
         creditcard_transaction_dict = {
             "TRANSACTION_ID": transaction_id,

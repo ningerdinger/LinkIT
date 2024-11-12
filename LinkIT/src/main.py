@@ -1,6 +1,7 @@
 from modules.modules import generate_customer_data, generate_transaction, save_to_csv
 
 if __name__ == "__main__":
+    #I will refactor this in future so that you only need to add a config
     CUSTOMER_NUM = 200
     TRANSACTION_NUM = 2000
 
